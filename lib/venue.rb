@@ -18,7 +18,17 @@ class Venue
     capitalized_patrons << patron.upcase
   end
   p capitalized_patrons
-  end 
+  end
+
+  def over_capacity?
+    if capacity <= 4
+    false
+    elsif capacity > 4
+    true
+  end
+
+
+  end
 
 
 end

@@ -1,5 +1,6 @@
 require 'rspec'
 require './lib/venue'
+require 'pry'
 
 describe Venue do
   describe '#initialize' do
@@ -40,7 +41,7 @@ describe Venue do
 
   describe '#yell_at_patrons' do
     it 'returns a list of uppercased names' do
-    
+
       venue = Venue.new('Bluebird', 4)
       venue.add_patron('Mike')
       venue.add_patron('Megan')
@@ -48,4 +49,26 @@ describe Venue do
       expect(venue.yell_at_patrons).to eq ['MIKE', 'MEGAN', 'BOB']
     end
   end
+
+  describe '#over_capacity?' do
+    it 'is over capacity?' do
+
+      venue = Venue.new('Bluebird', 4)
+      venue.add_patron('Mike')
+      venue.add_patron('Megan')
+      venue.add_patron('Bob')
+      expect(venue.over_capacity?). to be false
+    end
+  end
+
+  describe '#it_can_have_more_patrons' do
+    it 'returns a list of patrons' do
+      venue = Venue.new('Bluebird', 4)
+      venue.add_patron('James')
+      venue.add_patron('Cat')
+      expect(venue.patrons). to eq ['Mike', 'Megan', 'Bob', 'James', 'Cat']
+    end
+    #how to add these to my other patrons?? and then get them to add to capacity? 
+  end
+
 end

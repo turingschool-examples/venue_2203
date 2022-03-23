@@ -46,4 +46,14 @@ describe Venue do
       expect(venue.yell_at_patrons).to eq %w[MIKE MEGAN BOB]
     end
   end
+
+  describe '#over_capacity?' do
+    it 'returns a boolean according to capacity' do
+      venue = Venue.new('Bluebird', 4)
+      venue.add_patron('Mike')
+      venue.add_patron('Megan')
+      venue.add_patron('Bob')
+      expect(venue.over_capacity?).to eq(false)
+    end
+  end
 end

@@ -16,7 +16,7 @@ class Venue
     @patrons.each do |patron|
     yell_patrons << patron.upcase
     end
-    p yell_patrons
+    return yell_patrons
   end
 
   def over_capacity?
@@ -26,6 +26,7 @@ class Venue
       false
     end
   end
+
   def kick_out
     while @patrons.length > @capacity
       @patrons.shift

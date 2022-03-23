@@ -4,7 +4,6 @@ require './lib/venue'
 describe Venue do
   describe '#initialize' do
     it 'is a venue' do
-      skip
       venue = Venue.new('Bluebird', 4)
       expect(venue).to be_a Venue
     end
@@ -38,7 +37,7 @@ describe Venue do
       venue.add_patron('Megan')
       venue.add_patron('Bob')
 
-      expect(venue.patrons).to eq ['Mike', 'Megan', 'Bob']
+      expect(venue.patrons).to eq %w[Mike Megan Bob]
     end
   end
 
@@ -49,7 +48,7 @@ describe Venue do
       venue.add_patron('Mike')
       venue.add_patron('Megan')
       venue.add_patron('Bob')
-      expect(venue.yell_at_patrons).to eq ['MIKE', 'MEGAN', 'BOB']
+      expect(venue.yell_at_patrons).to eq %w[MIKE MEGAN BOB]
     end
   end
 end

@@ -28,7 +28,6 @@ describe Venue do
 
   describe '#add_patron' do
     it 'returns a list of patrons' do
-      skip
       venue = Venue.new('Bluebird', 4)
       venue.add_patron('Mike')
       venue.add_patron('Megan')
@@ -40,7 +39,6 @@ describe Venue do
 
   describe '#yell_at_patrons' do
     it 'returns a list of uppercased names' do
-      skip
       venue = Venue.new('Bluebird', 4)
       venue.add_patron('Mike')
       venue.add_patron('Megan')
@@ -49,3 +47,29 @@ describe Venue do
     end
   end
 end
+
+#iteration 3
+  describe '#over_capacity' do
+    it 'checks if capacity is full' do
+      venue = Venue.new('Bluebird', 4)
+      venue.add_patron('Mike')
+      venue.add_patron('Megan')
+      venue.add_patron('Bob')
+      venue.add_patron('James')
+      venue.add_patron('Cat')
+    expect(venue.over_capacity?).to eq(true)
+  end
+end
+#iteration 4
+  describe 'kick_out' do
+    it 'kicks out patrons over capacity' do
+      venue = Venue.new('Bluebird', 4)
+      venue.add_patron('Mike')
+      venue.add_patron('Megan')
+      venue.add_patron('Bob')
+      venue.add_patron('James')
+      venue.add_patron('Cat')
+      venue.kick_out
+      expect(venue.over_capacity?).to eq(false)
+    end
+  end

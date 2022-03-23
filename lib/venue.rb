@@ -25,12 +25,12 @@ class Venue
   end
 
   def over_capacity?
-    patrons.count > capacity
+    @patrons.count > @capacity
   end
 
   def kick_out
-    if patrons.count > capacity
-      patrons.pop
+    if @patrons.count > @capacity
+      @patrons.pop
     end
   end
 end

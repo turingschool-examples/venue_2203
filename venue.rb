@@ -5,9 +5,6 @@ class Venue
     @capacity = capacity
     @patrons = []
   end
-  def patrons
-    @patrons = ['Mike', 'Meg', 'Bob']
-  end
   def add_patrons(patrons)
     @patrons << patrons
   end
@@ -27,7 +24,10 @@ end
 venue = Venue.new('Bluebird', 4, [])
 p venue.name
 p venue.capacity
+p venue.add_patrons('Meg')
+p venue.add_patrons('Mike')
+p venue.add_patrons('Bob')
 p venue.add_patrons('Dave')
 p venue.yell_at_patrons
-p venue.patrons
+#p venue.patrons
 # p venue.limit

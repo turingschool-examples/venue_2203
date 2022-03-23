@@ -7,4 +7,20 @@ class Venue
         @patrons = []
     end
 
+    def add_patron(patron)
+        @patrons << patron
+    end
+
+    def yell_at_patrons
+    capitalized_patrons = []
+      patrons.each do |patron|
+        capitalized_patrons << patron.upcase
+      end
+      p capitalized_patrons
+    end
+
+    def over_capacity?
+        return false if @patrons <=3
+            true
+    end
 end

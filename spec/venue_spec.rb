@@ -56,7 +56,7 @@ describe Venue do
 
     describe '#over_capacity?' do
       it 'has a capacity' do 
-       skip
+       
         venue = Venue.new('Bluebird', 4)
         venue.add_patron('Mike')
         venue.add_patron('Bob')
@@ -66,7 +66,7 @@ describe Venue do
 
         venue.add_patron('James')
         venue.add_patron('Cat')
-        
+
         expect(over_capacity?).to be(true)
       end
     end 

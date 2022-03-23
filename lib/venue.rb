@@ -16,11 +16,11 @@ class Venue
       patrons.each do |patron|
         capitalized_patrons << patron.upcase
       end
-      p capitalized_patrons
+       capitalized_patrons
     end
 
     def over_capacity?
-        return false if @patrons <=3
-            true
+       return true if @capacity >= 4
+       false
     end
 end

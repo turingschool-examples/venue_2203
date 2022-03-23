@@ -25,5 +25,10 @@ class Venue
     else
       false
     end
-  end 
+  end
+  def kick_out
+    while @patrons.length > @capacity
+      @patrons.shift
+    end
+  end
 end

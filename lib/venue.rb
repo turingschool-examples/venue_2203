@@ -10,11 +10,13 @@ class Venue
     patrons << p_name
   end
 
-  def yell_at_patrons
+  def yell_at_patrons #Changed after test addition made it clear patrons was being changed instead of just temp displaying caps
+    yelling = [] #Declare array for collection outside of each, or it will be made over each time
     patrons.each do |bad_patron|
-      bad_patron.upcase! #! here returns bad_patrons after changes are made
-      #otherwise we have to reassign patrons or use return
+      caps_name = bad_patron.upcase
+      yelling << caps_name
     end
+    return yelling #Remember to return after .each's end, or else you only get one name
   end
 
   def over_capacity?

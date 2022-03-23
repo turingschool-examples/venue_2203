@@ -1,10 +1,13 @@
 class Venue
   attr_reader :name, :capacity, :patrons
-  def initialize(name, capacity, patrons)
+  def initialize(name, capacity)
     @name = name
     @capacity = capacity
     @patrons = []
   end
+  # def name
+  #   @name
+  # end
   def add_patrons(patrons)
     @patrons << patrons
   end
@@ -21,7 +24,7 @@ end
 
 end
 
-venue = Venue.new('Bluebird', 4, [])
+venue = Venue.new('Bluebird', 4)
 p venue.name
 p venue.capacity
 p venue.add_patrons('Meg')

@@ -18,4 +18,12 @@ class Venue
     end
     p yell_patrons
   end
+
+  def over_capacity?
+    if @patrons.length > @capacity
+      true
+    else
+      false
+    end
+  end 
 end

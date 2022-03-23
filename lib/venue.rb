@@ -10,11 +10,15 @@ class Venue
     @patrons << patron
   end
 
- #   def yell_at_patrons
- #    @patrons.upcase
- #   end
- # end
-end 
+  def yell_at_patrons
+    patron_upcase = []
+    # @patrons.each do |patron|
+    patron_upcase << patrons.upcase
+    p patron_upcase
+
+  end
+
+end
 
 
 
@@ -24,4 +28,4 @@ end
  venue.add_patron('Bob')
  venue.patrons
 
- # venue.yell_at_patrons
+ p venue.yell_at_patrons

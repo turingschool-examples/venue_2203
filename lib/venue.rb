@@ -25,6 +25,19 @@ class Venue
    return loud_patrons
  end
 
+ def over_capacity?
+   return patrons.count > capacity
+ end
+
+ def kick_out
+
+   number_to_kick_out = patrons.count - capacity
+   # require 'pry'; binding.pry
+   patrons.shift(number_to_kick_out)
+   # require 'pry'; binding.pry
+ end
+
+
 
 
 

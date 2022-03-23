@@ -20,4 +20,12 @@ class Venue
     return patrons_in_all_caps
   end
 
+  def over_capacity?
+    result = false
+    if @patrons.length > @capacity
+      result = true
+    end
+    return result
+  end
+
 end

@@ -16,7 +16,7 @@ class Venue
     @patrons.each do |patron|
     yell_patrons << patron.upcase
     end
-    return yell_patrons
+    p yell_patrons
   end
 
   def over_capacity?

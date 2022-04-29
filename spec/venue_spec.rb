@@ -1,28 +1,29 @@
 require 'rspec'
-require './lib/venue'
+require './lib/venue.rb'
+require 'pry'
 
 describe Venue do
   describe '#initialize' do
     it 'is a venue' do
-      skip
+      # skip
       venue = Venue.new('Bluebird', 4)
       expect(venue).to be_a Venue
     end
 
     it 'can read the name' do
-      skip
+      # skip
       venue = Venue.new('Bluebird', 4)
       expect(venue.name).to eq 'Bluebird'
     end
 
     it 'can read the capacity' do
-      skip
+      # skip
       venue = Venue.new('Bluebird', 4)
       expect(venue.capacity).to eq 4
     end
 
     it 'has no patrons by default' do
-      skip
+      # skip
       venue = Venue.new('Bluebird', 4)
       expect(venue.patrons).to eq []
     end
@@ -30,16 +31,8 @@ describe Venue do
 
   # Iteration 2
 
-  describe '#add_patron' do
-    it 'returns a list of patrons' do
-      skip
-      venue = Venue.new('Bluebird', 4)
-      venue.add_patron('Mike')
-      venue.add_patron('Megan')
-      venue.add_patron('Bob')
-
-      expect(venue.patrons).to eq ['Mike', 'Megan', 'Bob']
-    end
+  describe 'over_capacity?' do
+      it 'returns boolean for over capacity'
   end
 
   describe '#yell_at_patrons' do
@@ -52,4 +45,16 @@ describe Venue do
       expect(venue.yell_at_patrons).to eq ['MIKE', 'MEGAN', 'BOB']
     end
   end
+end
+
+# Iteration 3
+
+describe 'over_capacity?' do
+    it 'returns boolean for over capacity'
+      # skip
+      venue = Venue.new('Bluebird', 4)
+      venue.add_patron('Mike')
+      venue.add_patron('Megan')        venue.add_patron('Bob')
+      expect(venue.yell_at_patrons).to eq false
+    end
 end

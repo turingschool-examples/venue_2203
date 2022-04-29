@@ -31,16 +31,8 @@ describe Venue do
 
   # Iteration 2
 
-  describe '#add_patron' do
-    it 'returns a list of patrons' do
-      # skip
-      venue = Venue.new('Bluebird', 4)
-      venue.add_patron('Mike')
-      venue.add_patron('Megan')
-      venue.add_patron('Bob')
-
-      expect(venue.patrons).to eq ['Mike', 'Megan', 'Bob']
-    end
+  describe 'over_capacity?' do
+      it 'returns boolean for over capacity'
   end
 
   describe '#yell_at_patrons' do
@@ -57,16 +49,12 @@ end
 
 # Iteration 3
 
-describe Venue do
-  it 'exists' do
-    # skip
-    venue = Venue.new('Bluebird', 4)
-    expect (venue).to be_a Venue
-  end
-
-  it 'is over capacity' do
-    venue = Venue.new('Bluebird', 4)
-    venue.overcapacity? << patrons
-
-    expect(venue.patrons).to eq [false]
-  end
+describe 'over_capacity?' do
+    it 'returns boolean for over capacity'
+      # skip
+      venue = Venue.new('Bluebird', 4)
+      venue.add_patron('Mike')
+      venue.add_patron('Megan')        venue.add_patron('Bob')
+      expect(venue.yell_at_patrons).to eq false
+    end
+end
